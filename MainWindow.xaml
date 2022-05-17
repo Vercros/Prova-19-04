@@ -1,0 +1,132 @@
+﻿<Window x:Class="Prova_19_04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prova_19_04"
+        mc:Ignorable="d"
+         Title="Window1" Height="550" Width="820"
+        ResizeMode="NoResize"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" Background="#FF6BD250">
+    <Window.Resources>
+        <System:DateTime x:Key="DatePickerDisplayDate1">04/12/2022 08:49:31</System:DateTime>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="119"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Label Content="Aluno - Cadastro" FontSize="28" HorizontalAlignment="Center" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Informações:" FontSize="20" HorizontalAlignment="Left" Margin="20,-5,0,0" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold" Width="123"/>
+            <Label Content="Nome do aluno:" FontSize="20" HorizontalAlignment="Left" Margin="148,12,0,0" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold" Width="146"/>
+            <TextBox HorizontalAlignment="Left" Margin="64,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="22"/>
+            <DatePicker Margin="442,40,0,55"/>
+            <Label Content="Data de nascimento:" FontSize="20" HorizontalAlignment="Left" Margin="510,7,0,0" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold" Width="186"/>
+            <Label Content="Sexo:" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Margin="122,62,558,27"/>
+            <ComboBox Margin="67,92,502,8">
+                <ComboBoxItem Content="Masculino"/>
+                <ComboBoxItem Content="Feminino"/>
+            </ComboBox>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <Label Content="Filiações:" FontSize="20" FontFamily="Times New Roman" Height="44" FontWeight="Bold" Width="364"/>
+                <Label Content="Nome da mãe:" FontSize="20" FontFamily="Times New Roman" Height="37" FontWeight="Bold" Width="368"/>
+                <TextBox x:Name="NomeMae" TextWrapping="Wrap" Width="300" Height="22"/>
+                <Label Content="Nome do pai:" FontSize="20" FontFamily="Times New Roman" Height="33" FontWeight="Bold" Width="378"/>
+                <TextBox x:Name="NomePai" TextWrapping="Wrap" Width="300" Height="22"/>
+                <Label Content="Responsável:" FontSize="15" FontFamily="Times New Roman" Height="25" FontWeight="Bold" FontStyle="Normal" Width="380"/>
+                <ComboBox x:Name="Responsavel" Width="222">
+                    <ComboBoxItem Content="Pai"/>
+                    <ComboBoxItem Content="Mãe"/>
+                </ComboBox>
+                <Label Content="Telefone do responsável:" FontSize="20" FontFamily="Times New Roman" Height="33" FontWeight="Bold" Width="378"/>
+                <TextBox x:Name="Telrespon" TextWrapping="Wrap" Width="300" Height="22"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" >
+                <Label Content="Endereço:" FontSize="20" FontFamily="Times New Roman" Height="44" Width="122" FontWeight="Bold"/>
+                <Label Content="Logadouro:" FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold" Margin="-250,-10,0,0" Width="107"/>
+                <ComboBox x:Name="Logadouro" Height="19" Width="170 " Margin="-200,0,0,0">
+                    <ComboBoxItem Content="Rua"/>
+                    <ComboBoxItem Content="Avenida"/>
+                    <ComboBoxItem Content="Beco"/>
+                    <ComboBoxItem Content="Travessa"/>
+                </ComboBox>
+                <Label Content="Nome:" FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold" Margin="-290,0,0,0" Width="58"/>
+                <TextBox x:Name="NomeRua" TextWrapping="Wrap" Width="200" Margin="-170,0,0,0"/>
+                <Label Content="Bairro:" FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold" Margin="-300,0,0,0" Width="70"/>
+                <TextBox x:Name="Bairro" TextWrapping="Wrap" Width="120" Margin="-250,0,0,0"/>
+                <Label Content="CEP:" FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold" Margin="-300,0,0,0" Width="60"/>
+                <TextBox x:Name="Cep" TextWrapping="Wrap" Width="120" Margin="-250,-10,0,0"/>
+                <Label Content="N°:" FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold" Margin="190,-240,0,0" Width="60"/>
+                <TextBox x:Name="NumeroRua" TextWrapping="Wrap" Width="88" Margin="200,-190,0,0" Height="19"/>
+                <Label Content="Cidade:" FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold" Margin="50,-139,0,0" Width="60"/>
+                <TextBox x:Name="Cidade" TextWrapping="Wrap" Width="171" Margin="130,-100,0,0" Height="19"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Button Content="Salvar" FontSize="20" HorizontalAlignment="Left" Margin="694,0,0,0" VerticalAlignment="Center" Height="30" Width="69" FontFamily="Modern No. 20" FontWeight="Bold" Background="#FF0A9706" Foreground="Black" Click="Button_Click_1"/>
+            <Button Content="Cencelar" FontSize="20" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Center" Height="30" Width="108" FontFamily="Modern No. 20" FontWeight="Bold" Background="#FFE82E2E" Foreground="Black" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Informações:" FontSize="20" HorizontalAlignment="Left" Margin="20,-5,0,0" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold" Width="123"/>
+            <Label Content="Nome do aluno:" FontSize="20" HorizontalAlignment="Left" Margin="148,12,0,0" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold" Width="146"/>
+            <TextBox x:Name="TextNome" HorizontalAlignment="Left" Margin="64,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="22"/>
+            <DatePicker x:Name="DataNasc" Margin="442,40,0,55"/>
+            <Label Content="Data de nascimento:" FontSize="20" HorizontalAlignment="Left" Margin="510,7,0,0" FontFamily="Times New Roman" Height="44" VerticalAlignment="Top" FontWeight="Bold" Width="186"/>
+            <Label Content="Sexo:" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Margin="122,62,558,27"/>
+            <ComboBox x:Name="Sexo" Margin="67,92,502,8">
+                <ComboBoxItem Content="Masculino"/>
+                <ComboBoxItem Content="Feminino"/>
+            </ComboBox>
+            <Label Content="Tipo sanguineo:" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Margin="325,62,268,27"/>
+            <ComboBox Margin="301,92,268,8">
+                <ComboBoxItem Content="A"/>
+                <ComboBoxItem Content="B"/>
+                <ComboBoxItem Content="O"/>
+                <ComboBoxItem Content="AB"/>
+            </ComboBox>
+            <Label Content="Fator RH:" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Margin="537,64,56,25"/>
+            <ComboBox x:Name="FatorRH" Margin="525,92,44,8">
+                <ComboBoxItem Content="Positivo"/>
+                <ComboBoxItem Content="Negativo"/>
+            </ComboBox>
+            <ComboBox x:Name="TipoSan" Margin="301,92,268,8">
+                <ComboBoxItem Content="A"/>
+                <ComboBoxItem Content="B"/>
+                <ComboBoxItem Content="O"/>
+                <ComboBoxItem Content="AB"/>
+            </ComboBox>
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>
